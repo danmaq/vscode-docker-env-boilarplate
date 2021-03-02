@@ -1,0 +1,13 @@
+#!/bin/sh
+# vim: set ft=sh:
+
+set -eu
+cd "$(dirname $0)/.."
+
+if [[ "${OSTYPE}" == 'darwin'* ]]; then
+  scripts/.init/macos
+  exit 0
+else
+  echo 現在セットアップ スクリプトは macOS のみ対応しています。
+  exit 1
+fi

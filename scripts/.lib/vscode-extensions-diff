@@ -1,0 +1,10 @@
+#!/bin/bash
+# vim: set ft=sh:
+
+# TODO: `<(...)` 構文を `$()` で評価すると死ぬため、
+# 不本意ながらスクリプトを分けて、その出力を得る形式にしている。
+set -eu
+INSTALLED=$(code --list-extensions | tr '[:upper:]' '[:lower:]' | sort)
+diff -u <(echo "${INSTALLED}") <(scripts/.lib/vscode-extensions) \
+  | sed -e '/^[^+]/d' -e '/^+++/d' -e 's/^+/ --install-extension /' \
+  | tr -d '\n'

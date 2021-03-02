@@ -1,0 +1,25 @@
+# Git
+brew 'git'
+brew 'gnupg'
+brew 'pinentry-mac'
+
+# Editor
+brew 'vim'
+cask 'visual-studio-code'
+
+# Web browser
+cask 'firefox'
+cask 'google-chrome'
+
+# Virtualizations
+cask 'docker'
+
+# Certification
+brew 'mkcert'
+brew 'nss'
+
+# Others
+brew 'bash'
+brew 'graphviz'
+brew 'jq'
+brew 'proctools'
