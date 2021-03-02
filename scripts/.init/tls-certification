@@ -1,0 +1,9 @@
+#!/bin/sh
+# vim: set ft=sh:
+
+set -eu
+
+CERT=.cert
+sudo mkcert -install
+mkdir -p ${CERT}
+mkcert -cert-file ${CERT}/localhost.crt -key-file ${CERT}/localhost.key localhost

@@ -1,0 +1,29 @@
+#!/bin/sh
+# vim: set ft=sh:
+
+set -eu
+
+# SSH
+pgrep ssh-agent > /dev/null || eval "$(ssh-agent -s)"
+ssh-add
+
+# GPG
+git rev-parse --git-dir > /dev/null 2>&1 || exit
+EMAIL="$(git config user.email)"
+[ -z "${EMAIL}" ] && exit
+show_gpg_pubkey () {
+  echo "\033[1;36m以下の GPG 公開鍵を GitHub や GitLab 等に設定してください。\033[22;m"
+  echo "\033[36m$(gpg --armor --export "${EMAIL}")\033[m"
+  echo "参考: \033[4;34mhttps://qiita.com/cocoabreak/items/d96cd0ba56cdcbf62d32#github%E3%81%AB%E5%85%AC%E9%96%8B%E9%8D%B5%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B-1\033[24;m"
+}
+if git config --local user.signingkey > /dev/null; then
+  show_gpg_pubkey
+  exit
+fi
+if ! gpg -K "${EMAIL}" > /dev/null 2>&1; then
+  echo GPG 鍵を作成します。パスワードを作成してください。
+  gpg --quick-generate-key "$(git config user.name) <${EMAIL}>" future-default - 2y
+fi
+KEY=$(gpg -k "${EMAIL}" | grep -oE '[0-9A-F]{40}')
+git config --local user.signingkey "${KEY}"
+show_gpg_pubkey
