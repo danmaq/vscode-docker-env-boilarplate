@@ -99,4 +99,10 @@ init_macos () {
   gpg_agent_initialize
   gpg_initialize
 }
+
+# コンテナを立ち上げる前に毎回呼び出す、セットアップ スクリプト。
+pre_container_macos () {
+  mkcert_create_certification
+  ssh_agent_start
+}
 # endregion

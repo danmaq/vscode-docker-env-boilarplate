@@ -21,6 +21,6 @@
   ],
   "forwardPorts": [3000],
   "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-14-buster",
-  "initializeCommand": [],
+  "initializeCommand": ["scripts/pre_container"],
   "name": "Node.js & TypeScript"
 }
