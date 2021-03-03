@@ -1,0 +1,25 @@
+#!/bin/sh
+# vim: set ft=sh:
+
+set -eu
+
+# Command line tools for Xcode
+echo 'Using xcode-select'
+echo "\033[1;33m注意: GUI インストーラーが起動した場合、完了するまで次に進まないでください。\033[22;m"
+xcode-select --install 2> /dev/null || true
+
+# Homebrew
+if !(which brew > /dev/null); then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
+# Some apps for development
+pushd "$(dirname $0)" > /dev/null
+brew update > /dev/null
+brew bundle
+popd > /dev/null
+
+# Common setup
+scripts/.init/vscode-extensions
+scripts/.init/tls-certification
+scripts/.init/identifiers
