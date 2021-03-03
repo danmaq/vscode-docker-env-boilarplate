@@ -3,7 +3,7 @@
 
 set -eu
 
-/Applications/Firefox.app/Contents/MacOS/firefox -new-window https://google.com/ &
+/Applications/Firefox.app/Contents/MacOS/firefox -new-window https://www.mozilla.org/ &
 CERT=.cert
 sudo mkcert -install
 mkdir -p ${CERT}
