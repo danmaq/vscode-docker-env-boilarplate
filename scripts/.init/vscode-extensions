@@ -1,7 +1,0 @@
-#!/bin/bash
-# vim: set ft=sh:
-
-set -eu
-
-REQUIRED=$(scripts/.lib/vscode-extensions-diff)
-[ -z "${REQUIRED}" ] || code ${REQUIRED}

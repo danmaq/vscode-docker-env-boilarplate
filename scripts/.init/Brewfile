@@ -19,7 +19,6 @@ brew 'mkcert'
 brew 'nss'
 
 # Others
-brew 'bash'
 brew 'graphviz'
 brew 'jq'
 brew 'proctools'
