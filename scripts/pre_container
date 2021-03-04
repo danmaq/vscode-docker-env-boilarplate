@@ -1,0 +1,15 @@
+#!/bin/bash
+# vim: set ft=sh:
+
+set -eu
+cd "$(dirname $0)/.."
+
+. scripts/lib.sh
+
+if [[ "${OSTYPE}" == 'darwin'* ]]; then
+  pre_container_macos
+  exit 0
+else
+  echo 現在セットアップ スクリプトは macOS のみ対応しています。
+  exit 0
+fi

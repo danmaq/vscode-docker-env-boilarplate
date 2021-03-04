@@ -1,5 +1,0 @@
-#!/bin/sh
-# vim: set ft=sh:
-
-set -eu
-jq -r '.extensions[]' .devcontainer/devcontainer.json | tr '[:upper:]' '[:lower:]' | sort
