@@ -1,7 +1,7 @@
 # Vim および最新の Git をインストールします。
 # Docker 10 標準の Git は、バージョン 2.20
 ARG VARIANT=0-14-buster
-FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:${VARIANT}
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 ARG GIT_VERSION=2.30.1
 RUN bash -xc " \
   apt update && export DEBIAN_FRONTEND=noninteractive \
