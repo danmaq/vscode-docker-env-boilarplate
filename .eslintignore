@@ -1,0 +1,9 @@
+/.cert/
+/.devcontainer/
+/.github/
+/.vscode/
+/scripts/
+*.json
+*.md
+*.yml
+LICENSE
