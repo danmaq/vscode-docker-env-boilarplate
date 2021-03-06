@@ -17,6 +17,7 @@
     "url": "https://github.com/danmaq/vscode-docker-env-boilerplate/issues"
   },
   "scripts": {
+    "lint": "eslint --cache './**/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
