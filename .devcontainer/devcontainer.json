@@ -23,8 +23,6 @@
   "image": "danmaq/vscode-docker-env-boilerplate",
   "initializeCommand": ["scripts/pre_container"],
   "mounts": [
-    // ホスト環境と Docker 環境とにおける、外部パッケージ依存を隔離する。
-    // OS 依存の外部パッケージが、環境を跨いで悪さするのを抑える意図
     "type=bind,source=${localWorkspaceFolder}/.devcontainer/.caches/node_modules,target=${containerWorkspaceFolder}/node_modules,consistency=delegated"
   ],
   "name": "Node.js & TypeScript"

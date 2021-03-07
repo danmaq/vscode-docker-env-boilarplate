@@ -70,7 +70,7 @@ mkcert_create_certification () {
 # region VSCode Exensions
 # 依存している Visual Studio Code の拡張機能一覧を出力します。
 vscode_exensions () {
-  jq -r '.extensions[]' .devcontainer/devcontainer.json | tr '[:upper:]' '[:lower:]' | sort
+  jq -r '.extensions[] | ascii_downcase' .devcontainer/devcontainer.json | sort
 }
 
 # 依存している Visual Studio Code の拡張機能一覧のうち、不足している一覧を出力します。
