@@ -21,7 +21,9 @@
   ],
   "forwardPorts": [3000],
   "image": "danmaq/vscode-docker-env-boilerplate",
-  "initializeCommand": ["scripts/pre_container"],
-  "mounts": [],
+  "initializeCommand": ["scripts/pre_container.cmd"],
+  "mounts": [
+    "type=bind,source=${localWorkspaceFolder}/.devcontainer/.caches/node_modules,target=${containerWorkspaceFolder}/node_modules,consistency=delegated"
+  ],
   "name": "Node.js & TypeScript"
 }
