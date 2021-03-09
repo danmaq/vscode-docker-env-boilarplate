@@ -8,7 +8,7 @@ Update-ExecutionPolicy
 # # Install some apps using Chocolatey.
 Install-Chocolatey
 Initialize-Chocolatey
-choco install -y scripts/.init/package.config
+choco install -y scripts/.init/packages.config
 Install-Extensions
 
 # 開発用のルート CA 証明書をインストールします。
