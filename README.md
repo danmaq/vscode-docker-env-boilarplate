@@ -61,17 +61,18 @@ scripts/init
 - Graphviz
 - mkcert
 - Mozilla Firefox
-- Mozilla Network Security Services
-- PINEntry
 - Vim
 - Visual Studio Code
 - `(LM)` Bash
 - `(LM)` jq
+- `(LM)` Mozilla Network Security Services
+- `(LM)` PINEntry
 - `(LM)` proctools
 - `(M)` Command line tools for Xcode
 - `(M)` Homebrew
 - `(MW)` Docker Desktop
 - `(W)` Chocolatey
+- `(W)` PoshGit
 
 注釈付きのものは、当該 OS のみが対象です。
 
@@ -109,12 +110,15 @@ mkcert と Mozilla Network Security Services を使用して、
 
 これにより、Web ブラウザーにおける、セキュリティー上の警告を回避することができます。
 
-#### 4. SSH 秘密鍵の連携
+また、Firefox の TLS ストアを初期化するため、Firefox を起動することがあります。
+これはスクリプト終了後、閉じてしまって閉じてしまってかまいません。
+
+#### 4. SSH 秘密鍵の連携 (Linux / macOS のみ)
 
 Git リポジトリに SSH 経由で pull/push できるようにするため、SSH の鍵ペアをコンテナ内でも連携できるようにする必要があります。
 ここでは ssh-agent に既存の SSH 秘密鍵を登録することで、これを実現しています。
 
-#### 5. GPG 署名の鍵生成
+#### 5. GPG 署名の鍵生成 (Linux / macOS のみ)
 
 この工程は必須ではありませんが、GPG 署名を連携することにより、
 コミットの改竄防止に役立ちます。
