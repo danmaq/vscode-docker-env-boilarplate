@@ -1,13 +1,13 @@
 # vscode-docker-env-boilerplate
 
-Docker を使用した、環境非依存な Node.js Web アプリ開発における、
+Docker を使用した、環境非依存な Next.js Web アプリ開発における、
 環境構築のためのボイラープレートです。
 
 Visual Studio Code の公式拡張機能の一つ、
 [VSCode Remote - Containers](https://code.visualstudio.com/docs/remote/containers)
 をベースにこの仕組みを実現化しています。
-コンテナは [Debian 10](https://www.debian.org) をベースに、NodeJS、および
-TypeScript 環境を構築しています。
+コンテナは [Debian 10](https://www.debian.org) をベースに、NodeJS と最新の
+Git をインストール済みの状態で環境を構築しています。
 
 ## システム要件
 
@@ -17,7 +17,7 @@ TypeScript 環境を構築しています。
   - ここ 10 年の CPU は全対応しているが、稀に BIOS 側で無効化設定されているものもある
 - OS: 以下の 64bit OS
   - macOS 11 Big Sur 以降
-  - Windows 10 2004 May 2020 Update 以降 _(今後対応予定)_
+  - Windows 10 2004 May 2020 Update 以降 _(一部未対応: 今後対応予定)_
   - Ubuntu 20 Focal Fossa 以降 _(今後対応予定)_
     - デスクトップ環境が必須です。
 
@@ -113,12 +113,12 @@ mkcert と Mozilla Network Security Services を使用して、
 また、Firefox の TLS ストアを初期化するため、Firefox を起動することがあります。
 これはスクリプト終了後、閉じてしまって閉じてしまってかまいません。
 
-#### 4. SSH 秘密鍵の連携 (Linux / macOS のみ)
+#### 4. SSH 秘密鍵の連携 (現状 macOS のみ)
 
 Git リポジトリに SSH 経由で pull/push できるようにするため、SSH の鍵ペアをコンテナ内でも連携できるようにする必要があります。
 ここでは ssh-agent に既存の SSH 秘密鍵を登録することで、これを実現しています。
 
-#### 5. GPG 署名の鍵生成 (Linux / macOS のみ)
+#### 5. GPG 署名の鍵生成 (現状 macOS のみ)
 
 この工程は必須ではありませんが、GPG 署名を連携することにより、
 コミットの改竄防止に役立ちます。
@@ -131,6 +131,26 @@ GPG 署名が見つからない場合は、署名を自動的に生成します�
 _参考: [GitHub / GitLab 用にコミット署名を行うための準備メモ - Qiita](https://qiita.com/cocoabreak/items/d96cd0ba56cdcbf62d32#github%E3%81%AB%E5%85%AC%E9%96%8B%E9%8D%B5%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B-1)_
 
 </details>
+
+## 開発する
+
+コマンド パレットより `Remote-Containers: Reopen in Container` を選択し、
+コンテナ上で VSCode を開きます。初回に限り、コンテナのダウンロードのため
+460MB ほどの通信が必要です。
+
+コンテナの準備が整ったら、コンテナのターミナルで、下記コマンドを実行します。
+
+```sh
+npm ci
+npm run dev
+```
+
+## ビルドする
+
+```sh
+npm run build
+npm start
+```
 
 ## Linting
 
