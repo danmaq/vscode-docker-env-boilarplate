@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "HTTPS=true node server.config.js",
     "lint": "eslint --cache --fix './**/*'",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
