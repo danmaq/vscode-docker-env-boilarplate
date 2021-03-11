@@ -19,7 +19,7 @@
     "orta.vscode-jest",
     "visualstudioexptteam.vscodeintellicode"
   ],
-  "forwardPorts": [3000],
+  "appPort": ["443:443", "3000:3000"],
   "image": "danmaq/vscode-docker-env-boilerplate",
   "initializeCommand": ["scripts/pre_container.cmd"],
   "mounts": [
