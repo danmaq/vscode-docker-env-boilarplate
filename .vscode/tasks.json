@@ -1,8 +1,13 @@
 {
   "tasks": [
     {
-      "command": "echo Hello, world!",
-      "label": "echo: hello",
+      "command": "npm ci",
+      "label": "npm ci: Prepare the project",
+      "type": "shell"
+    },
+    {
+      "command": "npm run build",
+      "label": "npm run build: Build the project",
       "type": "shell"
     }
   ],
