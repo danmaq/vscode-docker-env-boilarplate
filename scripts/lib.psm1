@@ -26,7 +26,8 @@ Function Initialize-Chocolatey {
 
 # プロファイルが存在しない場合、生成します。
 Function New-Profile-File {
-  New-Item -ErrorAction SilentlyContinue -Path (Split-Path -Parent $profile) -ItemType directory
+  $PROF_DIR = $(Split-Path -Parent $profile)
+  New-Item -ErrorAction SilentlyContinue -Path $PROF_DIR -ItemType directory
   New-Item -ErrorAction SilentlyContinue -Path $profile -ItemType file
 }
 
