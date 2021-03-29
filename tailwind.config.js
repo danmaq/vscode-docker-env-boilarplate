@@ -1,7 +1,7 @@
 const neumorphism = require('tailwindcss-neumorphism');
 
 module.exports = {
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   plugins: [neumorphism],
   purge: [],
   theme: { extend: {} },
