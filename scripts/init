@@ -8,6 +8,7 @@ if [[ "${OSTYPE}" == 'darwin'* ]]; then
   scripts/.init/macos
   exit 0
 else
-  echo 現在セットアップ スクリプトは macOS のみ対応しています。
-  exit 1
+  echo 現在 Linux 版は不完全です。
+  scripts/.init/linux
+  exit 0
 fi
