@@ -1,0 +1,33 @@
+#!/bin/bash
+# vim: set ft=sh:
+
+set -eu
+
+# apt 経由で開発ツールのインストール
+sudo apt update
+sudo apt upgrade -y
+
+## Common CLI tools
+sudo apt install -y git wget
+
+## Web browsers
+sudo apt install -y firefox firefox-locale-ja
+
+sudo apt install -y chromium-browser vscode
+
+
+## Docker
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y docker-ce
+sudo systemctl status docker
+
+
+sudo apt install -y git jq vim
+sudo apt install -y gnupg2 libnss3-tools
+
+# その他の共通セットアップ
+. scripts/lib.sh
+init_macos

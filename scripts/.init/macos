@@ -3,23 +3,22 @@
 
 set -eu
 
-# Command line tools for Xcode
+# Command line tools for Xcode のインストール
 echo 'Using xcode-select'
 echo "注意: GUI インストーラーが起動した場合、完了するまで次に進まないでください。"
 xcode-select --install 2> /dev/null || true
 
-# Homebrew
+# Homebrew のインストール
 if !(which brew > /dev/null); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-# Some apps for development
+# Homebrew 経由で開発ツールのインストール
 pushd "$(dirname $0)" > /dev/null
 brew update > /dev/null
 brew bundle
 popd > /dev/null
 
-# Common setup
-
+# その他の共通セットアップ
 . scripts/lib.sh
 init_macos

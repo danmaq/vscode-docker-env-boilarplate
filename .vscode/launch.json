@@ -1,4 +1,15 @@
 {
-  "configurations": [],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Next: Node",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/src",
+      "runtimeArgs": ["run", "dev"],
+      "port": 9229,
+      "console": "integratedTerminal"
+    }
+  ],
   "version": "0.2.0"
 }
