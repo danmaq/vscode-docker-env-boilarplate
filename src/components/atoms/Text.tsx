@@ -1,7 +1,8 @@
-import type { FC } from 'react';
+import type { ChangeEventHandler, FC } from 'react';
 
 export interface Props {
   id: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   type?: TextType;
 }
 
@@ -14,10 +15,10 @@ export type TextType =
   | 'text'
   | 'url';
 
-const Component: FC<Props> = ({ children, id, type = 'text' }) => (
+const Component: FC<Props> = ({ children, id, onChange, type = 'text' }) => (
   <label htmlFor={id}>
     <span>{children}</span>
-    <input id={id} name={id} type={type} />
+    <input id={id} name={id} onChange={onChange} type={type} />
   </label>
 );
 Component.displayName = 'Text';
