@@ -1,6 +1,7 @@
 {
   "extensions": [
     "auchenberg.vscode-browser-preview",
+    "bradlc.vscode-tailwindcss",
     "chrislajoie.vscode-modelines",
     "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
