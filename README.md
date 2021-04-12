@@ -51,6 +51,7 @@ scripts/init
 これにより、下記のアクションを自動的に行います。
 繰り返し実行しても問題ありません。(冪等性を意識した実装です)
 
+<!-- markdownlint-disable MD033 -->
 <details><summary>セットアップ スクリプトで実行する内容</summary>
 
 #### 1. PC への各種アプリのインストール
@@ -132,6 +133,7 @@ GPG 署名が見つからない場合は、署名を自動的に生成します�
 _参考: [GitHub / GitLab 用にコミット署名を行うための準備メモ - Qiita](https://qiita.com/cocoabreak/items/d96cd0ba56cdcbf62d32#github%E3%81%AB%E5%85%AC%E9%96%8B%E9%8D%B5%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B-1)_
 
 </details>
+<!-- markdownlint-enable MD033 -->
 
 ## 開発する
 
