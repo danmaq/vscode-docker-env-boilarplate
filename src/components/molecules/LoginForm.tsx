@@ -13,10 +13,20 @@ export interface Props extends WithoutChildren {
 
 const Component: FC<Props> = ({ onChangePassword, onChangeUID, onSubmit }) => (
   <form action="#" onSubmit={onSubmit}>
-    <Text id="email" onChange={onChangeUID} type="email">
+    <Text
+      id="email"
+      onChange={onChangeUID}
+      placeholder="your.email@example.com"
+      type="email"
+    >
       ログインID
     </Text>
-    <Text id="password" onChange={onChangePassword} type="password">
+    <Text
+      id="password"
+      onChange={onChangePassword}
+      placeholder="password"
+      type="password"
+    >
       パスワード
     </Text>
     <Check id="store">ログインIDを保存</Check>
