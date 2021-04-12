@@ -85,6 +85,7 @@ scripts/init
 #### 2. Visual Studio Code への拡張機能のインストール
 
 - auchenberg.vscode-browser-preview
+- bradlc.vscode-tailwindcss
 - chrislajoie.vscode-modelines
 - davidanson.vscode-markdownlint
 - dbaeumer.vscode-eslint
