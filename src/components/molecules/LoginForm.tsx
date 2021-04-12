@@ -12,7 +12,7 @@ export interface Props extends WithoutChildren {
 }
 
 const Component: FC<Props> = ({ onChangePassword, onChangeUID, onSubmit }) => (
-  <form action="#" onSubmit={onSubmit}>
+  <form action="#" className="space-y-4" onSubmit={onSubmit}>
     <Text
       id="email"
       onChange={onChangeUID}
